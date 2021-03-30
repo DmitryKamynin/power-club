@@ -1,0 +1,21 @@
+.wrapper{
+    width: 100%;
+    height: 700px;
+    background-color: #1F2326;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+    margin-right: 100px;  
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 280px;
+    height: 500px;
+    background:linear-gradient(135deg, transparent 15px, #fb6935 0);
+}
+.card:last-child{
+    margin-right: 0px;
+}

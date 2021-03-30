@@ -1,0 +1,15 @@
+.root{
+    font-family: 'Montserrat';
+    max-width: 1400px;
+    margin: auto;
+}
+.circle{
+    position: absolute;
+    left: -300px;
+    top: -300px;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background-color: #fb6935;
+    z-index: -1000;
+}
