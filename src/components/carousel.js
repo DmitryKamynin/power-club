@@ -19,7 +19,6 @@ export default function Carousel({speed = 2, children, id}) {
             points.push(-coord , coord); 
         }
     },[])
-    console.log(coord)
     function getCoords(elem) {
         if(elem) {
         let box = elem.getBoundingClientRect();

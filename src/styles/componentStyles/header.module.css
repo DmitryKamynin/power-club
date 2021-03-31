@@ -7,6 +7,7 @@
     background: #1F2326;
     margin-top: 10px;
     padding: 12px 0px;
+    z-index: 10;
 }
     .logo{
         margin-left: 50px;
@@ -41,7 +42,7 @@
         grid-template-rows: 20px 20px;
         grid-gap: 10px 100px;
     }
-        .nav >  div >a{
+        .nav >  div > a{
             width: 100%;
             color: #fff;
             text-decoration: none;
@@ -51,3 +52,60 @@
         .nav > div > a:hover{
             border-bottom: 1px solid #fff;
         }
+    .burger, .mobileNav{
+        display: none;
+    }
+
+@media screen and (max-width: 1100px) {
+    .wrapper{
+        margin: 0;
+    }
+    .circle{
+        display: none;
+    }
+    .nav{
+        display: none;
+    }
+    .burger{
+        display: block;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+        .mobileNav{
+            transition: .3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            top: -170px;
+            z-index: 0;
+            background: #1F2326;
+        }
+            .mobileNav >  div{
+                margin-bottom: 10px;
+                border-bottom: 1px solid #fff;
+            }
+            .mobileNav >  div > a{
+                width: 100%;
+                color: #fff;
+                text-decoration: none;
+                transition: .3s;
+                border-bottom: 1px solid transparent;
+            }
+            .mobileNav > div > a:hover{
+                border-bottom: 1px solid #fff;
+            }
+}
+
+@media screen and (max-width: 480px) {
+    .burger{
+        margin: 0;
+    }
+    .wrapper{
+        justify-content: space-between;
+    }
+    .rectangle{
+        display: none;
+    }
+}
