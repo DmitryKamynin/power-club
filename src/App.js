@@ -2,7 +2,9 @@
 import styles from './styles/home.module.css';
 import Header from './components/Header';
 import Greeting from './components/greeting';
-import OurTeam from './components/ourTeam'
+import OurTeam from './components/ourTeam';
+import PhotoSlider from './components/photoSlider';
+import Calculator from './components/calculator';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
                 
                 <Greeting/>
                 <OurTeam/>
+                <PhotoSlider/>
+                <Calculator/> 
             </div>
         
         </div>

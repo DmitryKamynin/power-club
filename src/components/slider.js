@@ -22,11 +22,30 @@ export default function SliderContainer({speed = 1, id, autoScroll = 7000}){
    
     useEffect(() => {        
         let interval = setInterval(() => {
-            console.log(coord)
-            if(coord < -310){
-                setCoord(iniTcoord)
+            if(document.documentElement.clientWidth <= 480){
+                if(coord < -710){
+                    setCoord(iniTcoord)
+                }
+                else setCoord(coord - 260)
             }
-            else setCoord(coord - 260)
+            else if(document.documentElement.clientWidth <= 720){
+                if(coord < -400){
+                    setCoord(iniTcoord)
+                }
+                else setCoord(coord - 260)
+            }
+            else if(document.documentElement.clientWidth <= 1100){
+                if(coord < -200){
+                    setCoord(iniTcoord)
+                }
+                else setCoord(coord - 260)
+            }  
+            else{
+                if(coord < -310){
+                    setCoord(iniTcoord)
+                }
+                else setCoord(coord - 260)
+            }
         },10000)
         return () => {
             clearInterval(interval)
@@ -43,10 +62,31 @@ export default function SliderContainer({speed = 1, id, autoScroll = 7000}){
     }, [int])
 
     const handleClick = (event) => {
-        if(coord < -310){
-            setCoord(iniTcoord)
+        if(document.documentElement.clientWidth <= 480){
+            if(coord < -710){
+                setCoord(iniTcoord)
+            }
+            else setCoord(coord - 260)
         }
-        else setCoord(coord - 260)
+        else if(document.documentElement.clientWidth <= 720){
+            if(coord < -400){
+                setCoord(iniTcoord)
+            }
+            else setCoord(coord - 260)
+        }
+        else if(document.documentElement.clientWidth <= 1100){
+            if(coord < -200){
+                setCoord(iniTcoord)
+            }
+            else setCoord(coord - 260)
+        }  
+        else{
+            if(coord < -310){
+                setCoord(iniTcoord)
+            }
+            else setCoord(coord - 260)
+        }
+        
     }
     return (
             <div 

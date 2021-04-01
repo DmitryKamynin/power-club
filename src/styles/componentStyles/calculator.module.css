@@ -1,0 +1,69 @@
+.wrapper{
+    background-color: #fb6935;
+    padding-bottom: 50px;
+}
+.description{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 50px;
+}
+    
+    .title{
+        margin-top: 0px;
+    }
+    .accordion{
+        background-color: #1F2326 !important;
+        color:#fff !important;
+        font-size: 20px !important;
+        margin: 0px 50px !important;
+    }
+    .accordionDetails{
+        display: block !important;
+    }
+    .wrapperCalculator{
+        display: flex;
+        justify-content: space-between;
+    }
+    .slider{
+        color:#fb6935 !important;
+    }
+    .duration{
+        font-size: 16px;
+        max-width: 300px;
+    }
+        .duration > p{
+            margin:0px;
+            margin-top:10px;
+        }
+    .switchWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 15px;
+    }
+        .switch{
+            color: #fb6935 !important;
+        }
+        .switchTrack{
+            
+            background-color:#fb6935 !important;
+        }
+    .checkboxWrapper{
+        display: flex;
+    }
+    
+    .resultWrapper{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+        .UIbutton{
+            background-color: #fb6935;
+        }
+        .UIbutton:hover{
+            background-color: #ff7b00;
+        }
+    .priceInfo{
+        color:#fff;
+    }

@@ -26,12 +26,15 @@
         }
 @media screen and (max-width: 1100px) {
     .wrapper{
-        flex-direction: column-reverse;
+        display: grid;
     }
     .title{
+        margin: auto;
         margin-top: 20px;
+
     }
     .description{
+        margin: auto;
         margin-bottom: 20px;
     }
 }
