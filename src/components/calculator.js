@@ -46,24 +46,25 @@ export default function Calculator() {
 
     const handleDiscound = () => {
         let step = 2000;
-        if(duration >= 6) step = 1800;
+        if(duration >= 6)  step = 1800;
         if(duration >= 12) step = 1700;
         if(duration >= 18) step = 1600;
         if(needTrener) step += 3000;
         if(anyTime)    step += 300;
         if(yoga)       step += 1500;
-        if(pilates)       step += 1000;
-        if(boxing)       step += 1500;
-        if(crossFit)       step += 1000;
-        if(stretching)       step += 800;
+        if(pilates)    step += 1000;
+        if(boxing)     step += 1500;
+        if(crossFit)   step += 1000;
+        if(stretching) step += 800;
         setDiscount(step * duration);
     }
 
     const renderDicsount = () => {
-        if(duration >= 18) return <p>Цена со скидкой в 20% составит: {discount}₽</p>
-        else if(duration >= 12) return <p>Цена со скидкой в 15% составит: {discount}₽</p>
-        else if(duration >= 6)  return <p>Цена со скидкой в 10% составит: {discount}₽</p>
-        else return <p>Вы получите скидку купив абонимент длительностью от полугода</p>
+        if(discount === null)   return <p className={styles.resultTitle}>Расчитайте свою скидку!</p>
+        if(duration >= 18)      return <p className={styles.resultTitle}>Цена со скидкой в 20% составит: {discount}₽</p>
+        else if(duration >= 12) return <p className={styles.resultTitle}>Цена со скидкой в 15% составит: {discount}₽</p>
+        else if(duration >= 6)  return <p className={styles.resultTitle}>Цена со скидкой в 10% составит: {discount}₽</p>
+        else return <p className={styles.resultTitle}>Вы получите скидку купив абонемент длительностью от полугода</p>
     }
     
     return (
@@ -77,10 +78,10 @@ export default function Calculator() {
                         <h1 className={styles.title}>
                             ВАШ АБОНЕМЕНТ
                         </h1>
-                        <h2>
+                        <h2 className={styles.title}>
                             ВЫБЕРИТЕ СВОЙ ТАРИФ НА ОДИН ИЛИ ДВА ГОДА
                         </h2>
-                        <p>Мы предлагаем разные виды тарифоф: каждый клиент может выбрать оптимальный для себя вариант по продолжительности действия абонемента и набору его услуг.<br/>
+                        <p className={styles.pInDescription}>Мы предлагаем разные виды тарифоф: каждый клиент может выбрать оптимальный для себя вариант по продолжительности действия абонемента и набору его услуг.<br/>
                         Члены клуба получают доступ ко всей инфраструктуре фитнес-центра: тренажерному залу, бассейну, залам групповых программ и другим зонам.</p>
                     </div>
            </div>
@@ -101,51 +102,52 @@ export default function Calculator() {
                 }}>
 
                     <div className={styles.wrapperCalculator}>                    
-                    <div className={styles.duration}>
-                        <p>Продолжительность абонемента в месяцах: {duration}</p>
-                        <div>
-                            <Slider
-                                classes={{  
-                                    root: styles.slider
-                                }}
-                                value={duration}
-                                min={1}
-                                step={1}
-                                max={24}
-                                onChange={(e,newValue) => setDuration(newValue)}
+                        <div className={styles.sliderWrapper}>
+                            <p>Продолжительность абонемента в месяцах: {duration}</p>
+                            <div>
+                                <Slider
+                                    classes={{  
+                                        root: styles.slider
+                                    }}
+                                    value={duration}
+                                    min={1}
+                                    step={1}
+                                    max={24}
+                                    onChange={(e,newValue) => setDuration(newValue)}
+                                />
+                            </div>
+                            
+                        </div>
+                        <div className={styles.switchWrapper}>
+                            <FormControlLabel
+                                control={
+                                    <Switch
+                                        checked={needTrener}
+                                        onChange={() => {setNeedTrener(!needTrener)}}
+                                        name="needTrener"
+                                        classes={{
+                                            colorSecondary:styles.switch,
+                                            track:styles.switchTrack,
+                                        }}
+                                    />}
+                                label="Нужен тренер?"
+                            />
+                            <FormControlLabel
+                                control={
+                                    <Switch 
+                                        checked={anyTime} 
+                                        onChange={() => {setAnyTime(!anyTime)}}  
+                                        name="anyTime" 
+                                        classes={{
+                                            colorSecondary:styles.switch,
+                                            track:styles.switchTrack,
+                                        }}
+                                    />}
+                                label="Посещение в любое время"
                             />
                         </div>
-                        
-                    </div>
-                    <div className={styles.switchWrapper}>
-                        <FormControlLabel
-                            control={
-                                <Switch
-                                    checked={needTrener}
-                                    onChange={() => {setNeedTrener(!needTrener)}}
-                                    name="needTrener"
-                                    classes={{
-                                        colorSecondary:styles.switch,
-                                        track:styles.switchTrack,
-                                    }}
-                                />}
-                            label="Нужен тренер?"
-                        />
-                        <FormControlLabel
-                            control={
-                                <Switch 
-                                    checked={anyTime} 
-                                    onChange={() => {setAnyTime(!anyTime)}}  
-                                    name="anyTime" 
-                                    classes={{
-                                        colorSecondary:styles.switch,
-                                        track:styles.switchTrack,
-                                    }}
-                                />}
-                            label="Посещение в любое время"
-                        />
-                    </div>
-                    <div className={styles.checkboxWrapper}>
+                        <div className={styles.checkboxWrapper}>
+                    <p className={styles.checkboxTitle}>Выберите нужные вам услуги!</p>
                         <FormControlLabel
                             control={
                                 <Checkbox 
@@ -206,16 +208,17 @@ export default function Calculator() {
                                 />}
                             label="Растяжка"
                         />
+                       
                     </div>
-                </div>
+                    </div>
                    
                     <div className={styles.resultWrapper}>
                         <Button  onClick={handleDiscound} size='large' className={styles.UIbutton} variant='contained' endIcon={<AttachMoneyIcon/>}>
                             Рассчитать скидку!
                         </Button>
-                        <div>
-                            <p style={{margin:'0px'}}>Стоимость без скидки составит: {result}₽</p>
-                        {discount ? renderDicsount() : ''}
+                        <div className={styles.resultTitleWrapper}>
+                            <p className={styles.resultTitle}>Стоимость без скидки составит: {result}₽</p>
+                            {renderDicsount()}
                         </div>
                         <Button size='large' className={styles.UIbutton} variant='contained'>
                             Заполнить форму
@@ -223,7 +226,13 @@ export default function Calculator() {
                     </div>
                     
                     <div className={styles.priceInfo}>
-                        <div>Здесь вы найдёте краткую информацию о стоимости услуг...</div>
+                        <div className={styles.priceInfoTitle}>Здесь вы найдёте краткую информацию о стоимости услуг...</div>
+                        <div className={styles.priceInfoDescription}>
+                            Скидка начинает действовать при покупке абонимента длительностью от полугода:<br/>
+                            - Скидка 10% от 6 месяцев<br/>
+                            - Скидка 15% от 12 месяцев<br/>
+                            - Скидка 20% от 18 месяцев<br/>
+                        </div>
                     </div>
                 </AccordionDetails>
             </Accordion>

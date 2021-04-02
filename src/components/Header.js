@@ -51,7 +51,7 @@ const [hide, setHide] = useState(false)
                     <a href='#2'>Занятия</a>
                 </div>
                 <div>
-                    <a href='#3'>Мы в соц сетях</a>
+                    <a href='#3'>Мы В Контакте</a>
                 </div>
                 <div>
                     <a href='#4'>Рассчитать стоимость</a>

@@ -13,8 +13,26 @@
     background-color: #fb6935;
     z-index: -1000;
 }
+.schedule{
+    padding: 20px 100px;
+}
+.scheduleTitle{
+    margin-top: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color:#fff;
+}
+
 @media screen and (max-width: 1100px) {
     .circle{
         display: none;
     }
+    .schedule{
+        padding: 60px 0px;
+    }
+    .scheduleTitle{
+        font-size:18px;
+    }
 }
+
