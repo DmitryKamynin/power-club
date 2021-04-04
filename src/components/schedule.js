@@ -59,11 +59,11 @@ export default function SimpleTabs({light}) {
             flexContainer:styles.flexContainer,
             indicator: styles.indicator,
         }} value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab classes={{root:styles.tabs}} label="Понедельник" {...a11yProps(0)} />
-          <Tab classes={{root:styles.tabs}} label="Вторник" {...a11yProps(1)} />
-          <Tab classes={{root:styles.tabs}} label="Среда" {...a11yProps(2)} />
-          <Tab classes={{root:styles.tabs}} label="Четверг" {...a11yProps(3)} />
-          <Tab classes={{root:styles.tabs}} label="Пятница" {...a11yProps(4)} />
+          <Tab classes={{root:light ? styles.tabsL : styles.tabs}} label="Понедельник" {...a11yProps(0)} />
+          <Tab classes={{root:light ? styles.tabsL : styles.tabs}} label="Вторник" {...a11yProps(1)} />
+          <Tab classes={{root:light ? styles.tabsL : styles.tabs}} label="Среда" {...a11yProps(2)} />
+          <Tab classes={{root:light ? styles.tabsL : styles.tabs}} label="Четверг" {...a11yProps(3)} />
+          <Tab classes={{root:light ? styles.tabsL : styles.tabs}} label="Пятница" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

@@ -7,7 +7,10 @@
     justify-content: center  !important;
 }
 .tabs{
-    color:#24272e;
+    color:#fff !important;
+}
+.tabsL{
+    color:#24272e !important;
 }
 
 .flexContainer{

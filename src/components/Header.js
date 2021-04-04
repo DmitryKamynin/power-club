@@ -3,6 +3,7 @@ import {useState} from 'react';
 
 import styles from '../styles/componentStyles/header.module.css';
 import logo from '../images/logo.svg';
+import logoBlack from '../images/logoBlack.svg';
 import IconButton from '@material-ui/core/IconButton';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 
@@ -17,7 +18,7 @@ const [hide, setHide] = useState(false)
             </div>
             <div className={global.light ? styles.rectangleLight : styles.rectangle}/>
             <div>
-                <img src={logo} alt='logo'/>
+                <img src={global.light ? logoBlack : logo} alt='logo'/>
             </div>
             <div className={`${styles.nav}  ${global.light ? styles.navLight : ''}`}>
                 <div>
