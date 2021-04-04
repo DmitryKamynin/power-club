@@ -10,6 +10,7 @@ import Switch from '@material-ui/core/Switch';
 import Checkbox from '@material-ui/core/Checkbox';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 
 
@@ -69,6 +70,9 @@ export default function Calculator() {
     
     return (
         <div className={styles.wrapper}>
+            <ScrollableAnchor id={'calculator'}>
+				<div></div>
+			</ScrollableAnchor>
             <div
                 className={styles.description}>
                     <div>
@@ -221,7 +225,9 @@ export default function Calculator() {
                             {renderDicsount()}
                         </div>
                         <Button size='large' className={styles.UIbutton} variant='contained'>
-                            Заполнить форму
+                            <a style={{color: 'rgba(0, 0, 0, 0.87)', textDecoration:'none'}} href='#form'>
+                                Заполнить форму
+                            </a>
                         </Button>
                     </div>
                     

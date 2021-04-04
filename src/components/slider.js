@@ -9,6 +9,7 @@ import trener4 from '../images/trener4.png';
 import trener5 from '../images/trener5.png';
 import arrow from '../images/arrow.png';
 
+
 export default function SliderContainer({speed = 1, id, autoScroll = 7000}){
 
     const [coord, setCoord] = useState(false);
@@ -93,6 +94,7 @@ export default function SliderContainer({speed = 1, id, autoScroll = 7000}){
                 onClick={handleClick}
                 className={`${styles.currentSlide} ${id}`}
             >
+                
                 <div className={styles.arrow}>
                     <img  alt='' className={int ? '' : 'animate__animated animate__pulse animate__slower'} src={arrow}/>
                 </div>

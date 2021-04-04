@@ -2,11 +2,12 @@ import React from 'react'
 import Slider from '../components/slider';
 
 import styles from '../styles/componentStyles/ourTeam.module.css';
-
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 
 export default function ourTeam() {
     return (
+        <ScrollableAnchor id={'treners'}>
         <div className={styles.wrapper}>
             <div className={styles.info}>
                 <div className={styles.title}>
@@ -18,5 +19,6 @@ export default function ourTeam() {
             </div>
             <Slider id='abcd'/>
         </div>
+        </ScrollableAnchor>
     )
 }

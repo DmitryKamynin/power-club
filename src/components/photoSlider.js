@@ -1,10 +1,29 @@
-import {useEffect, useState} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from '../styles/componentStyles/photoSlider.module.css';
 import photo1 from '../images/1.jpg';
 import photo2 from '../images/2.jpg';
 import photo3 from '../images/3.jpg';
 import photo4 from '../images/4.jpg';
 import photo5 from '../images/5.jpg';
+
+function useInterval(callback, delay) {
+    const savedCallback = useRef();
+  
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+  
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+
 
 export default function PhotoSlider( {children} ) {
     const [shift, setShift] = useState(0);
@@ -21,21 +40,16 @@ export default function PhotoSlider( {children} ) {
         setEndPoint(containerWidth - sliderWidth);
     })
 
-    useEffect(() => {
-        let interval = setInterval(() => {
-            if(shift <= -endPoint){
-                setShift(0)
-                setCount(1);
-            }
-            else {
-                setCount(count + 1);
-                setShift(shift + -width)
-            }
-        },6000)
-        return () => {
-            clearInterval(interval)
+    useInterval(() => {
+        if(shift <= -endPoint){
+            setShift(0)
+            setCount(1);
         }
-    },[count])
+        else {
+            setCount(count + 1);
+            setShift(shift + -width)
+        }
+    }, 6000)
 
     const handleClick = () => {
         if(shift <= -endPoint){

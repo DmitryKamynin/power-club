@@ -1,4 +1,4 @@
-// import Carousel from './components/carousel';
+
 import styles from './styles/home.module.css';
 import Header from './components/Header';
 import Greeting from './components/greeting';
@@ -8,16 +8,20 @@ import Calculator from './components/calculator';
 import Schedule from './components/schedule';
 import Form from './components/form';
 
+
 function App() {
   return (
     <div>
         <div className={styles.circle}></div>
         <div className={styles.root}>
-            <Header/>
 
+            <Header/>
             <div className={styles.main}>
                 <Greeting/>
-                <OurTeam/>
+                
+                    <OurTeam/>
+				
+                
                 <PhotoSlider/>
                 <Calculator/> 
                 <div className={styles.schedule}>

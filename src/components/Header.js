@@ -6,6 +6,7 @@ import logo from '../images/logo.svg';
 import IconButton from '@material-ui/core/IconButton';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 
+
 export default function Header() {
 const [hide, setHide] = useState(false)
 
@@ -20,19 +21,19 @@ const [hide, setHide] = useState(false)
             </div>
             <div className={styles.nav}>
                 <div>
-                    <a href='#1'>Тренера</a>
+                    <a href='#treners'>Тренера</a>
                 </div>
                 <div>
-                    <a href='#2'>Занятия</a>
+                    <a href='#schedule'>Занятия</a>
                 </div>
                 <div>
-                    <a href='#3'>Мы в соц сетях</a>
+                    <a href='#3'>Мы В Контакте</a>
                 </div>
                 <div>
-                    <a href='#4'>Рассчитать стоимость</a>
+                    <a href='#calculator'>Рассчитать стоимость</a>
                 </div>
                 <div>
-                    <a href='#5'>Свяжитесь с нами</a>
+                    <a href='#form'>Свяжитесь с нами</a>
                 </div>
                 <div>
                     <a href='tel:+78008008080'>+7-900-800-70-60</a>
