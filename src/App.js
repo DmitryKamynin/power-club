@@ -7,30 +7,30 @@ import PhotoSlider from './components/photoSlider';
 import Calculator from './components/calculator';
 import Schedule from './components/schedule';
 import Form from './components/form';
-
+import React, {useState,useEffect} from 'react';
 
 function App() {
-  return (
-    <div>
-        <div className={styles.circle}></div>
-        <div className={styles.root}>
+    const [light, setLight] = useState(false);
 
-            <Header/>
+    const global = {light, setLight};
+
+  return (
+    <div className={styles.body} style={light ? {backgroundColor:'#fff'} : {}}>
+        <div  className={styles.root}>
+
+            <Header global={global}/>
             <div className={styles.main}>
                 <Greeting/>
-                
-                    <OurTeam/>
-				
-                
+                <OurTeam light={light}/>
                 <PhotoSlider/>
-                <Calculator/> 
-                <div className={styles.schedule}>
-                    <p className={styles.scheduleTitle}>Узнайте расписание занятий!</p>
-                    <Schedule/>
+                <Calculator light={light}/> 
+                <div className={light ? styles.scheduleL : styles.schedule}>
+                    <p className={light ? styles.scheduleTitleL : styles.scheduleTitle}>Узнайте расписание занятий!</p>
+                    <Schedule light={light}/>
                 </div>
-                <div className={styles.form}>
-                    <p className={styles.scheduleTitle}>Есть вопросы? Заполните форму, а потом мы вам перезвоним и всё расскажем!</p>
-                    <Form/>
+                <div className={light ? styles.formL : styles.form}>
+                    <p className={light ? styles.scheduleTitleL : styles.scheduleTitle}>Есть вопросы? Заполните форму, а потом мы вам перезвоним и всё расскажем!</p>
+                    <Form light={light}/>
                 </div>
                 
             </div>

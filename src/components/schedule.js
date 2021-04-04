@@ -26,8 +26,8 @@ function TabPanel(props) {
     </div>
   );
 }
-function CardRender({title,name, time}) {
-    return <div className={styles.cardWrapper}>
+function CardRender({title,name, time, light}) {
+    return <div className={light ? styles.cardWrapperL : styles.cardWrapper}>
                 <p>{title}</p>
                 <p>{name}</p>
                 <p>{time}</p>         
@@ -41,7 +41,7 @@ function a11yProps(index) {
   };
 }
 
-export default function SimpleTabs() {
+export default function SimpleTabs({light}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -49,13 +49,13 @@ export default function SimpleTabs() {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={light ? styles.rootL :styles.root}>
       <ScrollableAnchor id={'schedule'}>
         <div></div>
       </ScrollableAnchor>
       <AppBar position="static">
         <Tabs classes={{
-            root: styles.root,
+            root: light ? styles.rootL :styles.root,
             flexContainer:styles.flexContainer,
             indicator: styles.indicator,
         }} value={value} onChange={handleChange} aria-label="simple tabs example">
@@ -68,47 +68,47 @@ export default function SimpleTabs() {
       </AppBar>
       <TabPanel value={value} index={0}>
           <div className={styles.tabPanelroot}>
-            <CardRender title='Кроссфит' name='Анна' time='12:00-14:00'/>
-            <CardRender title='Пилатес' name='Виктор' time='14:00-16:00'/>
-            <CardRender title='Йога' name='Алёна' time='16:00-18:00'/>
-            <CardRender title='Растяжка' name='Дарья' time='18:00-20:00'/>
-            <CardRender title='Бокс' name='Андрей' time='20:00-22:00'/>
+            <CardRender light={light} title='Кроссфит' name='Анна' time='12:00-14:00'/>
+            <CardRender light={light} title='Пилатес' name='Виктор' time='14:00-16:00'/>
+            <CardRender light={light} title='Йога' name='Алёна' time='16:00-18:00'/>
+            <CardRender light={light} title='Растяжка' name='Дарья' time='18:00-20:00'/>
+            <CardRender light={light} title='Бокс' name='Андрей' time='20:00-22:00'/>
           </div>
       </TabPanel> 
       <TabPanel value={value} index={1}>
         <div className={styles.tabPanelroot}>
-            <CardRender title='Йога' name='Алёна' time='12:00-14:00'/>
-            <CardRender title='Растяжка' name='Дарья' time='14:00-16:00'/>
-            <CardRender title='Кроссфит' name='Анна' time='16:00-18:00'/>
-            <CardRender title='Пилатес' name='Виктор' time='18:00-20:00'/>
-            <CardRender title='Бокс' name='Андрей' time='20:00-22:00'/>
+            <CardRender light={light} title='Йога' name='Алёна' time='12:00-14:00'/>
+            <CardRender light={light} title='Растяжка' name='Дарья' time='14:00-16:00'/>
+            <CardRender light={light} title='Кроссфит' name='Анна' time='16:00-18:00'/>
+            <CardRender light={light} title='Пилатес' name='Виктор' time='18:00-20:00'/>
+            <CardRender light={light} title='Бокс' name='Андрей' time='20:00-22:00'/>
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <div className={styles.tabPanelroot}>
-            <CardRender title='Кроссфит' name='Анна' time='12:00-14:00'/>
-            <CardRender title='Пилатес' name='Виктор' time='14:00-16:00'/>
-            <CardRender title='Йога' name='Алёна' time='16:00-18:00'/>
-            <CardRender/>
-            <CardRender title='Бокс' name='Андрей' time='20:00-22:00'/>
+            <CardRender light={light} title='Кроссфит' name='Анна' time='12:00-14:00'/>
+            <CardRender light={light} title='Пилатес' name='Виктор' time='14:00-16:00'/>
+            <CardRender light={light} title='Йога' name='Алёна' time='16:00-18:00'/>
+            <CardRender light={light}/>
+            <CardRender light={light} title='Бокс' name='Андрей' time='20:00-22:00'/>
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <div className={styles.tabPanelroot}>
-            <CardRender title='Кроссфит' name='Анна' time='12:00-14:00'/>
-            <CardRender/>
-            <CardRender title='Йога' name='Алёна' time='16:00-18:00'/>
-            <CardRender title='Растяжка' name='Дарья' time='18:00-20:00'/>
-            <CardRender title='Бокс' name='Андрей' time='20:00-22:00'/>
+            <CardRender light={light} title='Кроссфит' name='Анна' time='12:00-14:00'/>
+            <CardRender light={light}/>
+            <CardRender light={light} title='Йога' name='Алёна' time='16:00-18:00'/>
+            <CardRender light={light} title='Растяжка' name='Дарья' time='18:00-20:00'/>
+            <CardRender light={light} title='Бокс' name='Андрей' time='20:00-22:00'/>
         </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
         <div className={styles.tabPanelroot}>
-            <CardRender title='Кроссфит' name='Анна' time='12:00-14:00'/>
-            <CardRender title='Пилатес' name='Виктор' time='14:00-16:00'/>
-            <CardRender title='Йога' name='Алёна' time='16:00-18:00'/>
-            <CardRender title='Растяжка' name='Дарья' time='18:00-20:00'/>
-            <CardRender title='Бокс' name='Андрей' time='20:00-22:00'/>
+            <CardRender light={light} title='Кроссфит' name='Анна' time='12:00-14:00'/>
+            <CardRender light={light} title='Пилатес' name='Виктор' time='14:00-16:00'/>
+            <CardRender light={light} title='Йога' name='Алёна' time='16:00-18:00'/>
+            <CardRender light={light} title='Растяжка' name='Дарья' time='18:00-20:00'/>
+            <CardRender light={light} title='Бокс' name='Андрей' time='20:00-22:00'/>
         </div>
       </TabPanel>
     </div>

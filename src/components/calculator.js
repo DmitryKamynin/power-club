@@ -14,7 +14,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 
 
 
-export default function Calculator() {
+export default function Calculator({light}) {
     const [duration, setDuration]     = useState(1);
     const [anyTime, setAnyTime]       = useState(false);
     const [needTrener, setNeedTrener] = useState(false);
@@ -69,7 +69,7 @@ export default function Calculator() {
     }
     
     return (
-        <div className={styles.wrapper}>
+        <div className={`${light ? styles.wrapperL : styles.wrapper} ${light ? styles.textL : ""}`}>
             <ScrollableAnchor id={'calculator'}>
 				<div></div>
 			</ScrollableAnchor>

@@ -12,7 +12,7 @@ function SlideTransition(props) {
 }
 
 
-export default function LoginForm() {
+export default function LoginForm({light}) {
 	const [state, setState] = React.useState({
 		open: false,
 		Transition: Fade,
@@ -53,7 +53,7 @@ export default function LoginForm() {
 	
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.formWrapper}>
+			<div className={light ? styles.formWrapperL : styles.formWrapper}>
 				
 
 				

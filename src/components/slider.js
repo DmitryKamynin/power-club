@@ -10,7 +10,7 @@ import trener5 from '../images/trener5.png';
 import arrow from '../images/arrow.png';
 
 
-export default function SliderContainer({speed = 1, id, autoScroll = 7000}){
+export default function SliderContainer({light, id}){
 
     const [coord, setCoord] = useState(false);
     const [iniTcoord, setInitCoord] = useState(false);
@@ -99,24 +99,24 @@ export default function SliderContainer({speed = 1, id, autoScroll = 7000}){
                     <img  alt='' className={int ? '' : 'animate__animated animate__pulse animate__slower'} src={arrow}/>
                 </div>
 
-                <div style={{left:coord}} className={styles.card}>
-                    <h1 className={styles.trenerName}>ANNA</h1>
+                <div style={{left:coord}} className={light ? styles.cardL : styles.card}>
+                    <h1 className={light ? styles.trenerNameL : styles.trenerName}>ANNA</h1>
                     <img src={trener1} alt=''/>
                 </div>
-                <div style={{left:coord}} className={styles.card}>
-                    <h1 className={styles.trenerName}>ALENA</h1>
+                <div style={{left:coord}} className={light ? styles.cardL : styles.card}>
+                    <h1 className={light ? styles.trenerNameL : styles.trenerName}>ALENA</h1>
                     <img src={trener2} alt=''/>
                 </div>
-                <div style={{left:coord}} className={styles.card}>
-                    <h1 className={styles.trenerName}>VICTOR</h1>
+                <div style={{left:coord}} className={light ? styles.cardL : styles.card}>
+                    <h1 className={light ? styles.trenerNameL : styles.trenerName}>VICTOR</h1>
                     <img src={trener3} alt=''/>
                 </div>
-                <div style={{left:coord}} className={styles.card}>
-                    <h1 className={styles.trenerName}>ANDREY</h1>
+                <div style={{left:coord}} className={light ? styles.cardL : styles.card}>
+                    <h1 className={light ? styles.trenerNameL : styles.trenerName}>ANDREY</h1>
                     <img src={trener4} alt=''/>
                 </div>
-                <div style={{left:coord}} className={styles.card}>
-                    <h1 className={styles.trenerName}>DARIA</h1>
+                <div style={{left:coord}} className={light ? styles.cardL : styles.card}>
+                    <h1 className={light ? styles.trenerNameL : styles.trenerName}>DARIA</h1>
                     <img src={trener5} alt=''/>
                 </div>
             </div>

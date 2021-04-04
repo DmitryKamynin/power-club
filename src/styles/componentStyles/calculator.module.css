@@ -2,12 +2,18 @@
     background-color: #fb6935;
     padding-bottom: 50px;
 }
+.wrapperL{
+    background-color: #f0f0f0;
+    padding-bottom: 50px;
+}
 .description{
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 30px 50px;
 }
-    
+    .textL{
+        color:black;
+    }
     .title{
         margin-top: 0px;
     }
